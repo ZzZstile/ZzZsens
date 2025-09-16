@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZzZstile Sensitivity Form</title>
+  <style>
+    body {
+      font-family: 'Vazir', sans-serif;
+      background: #1c1c1c;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2b2b2b;
+      padding: 20px;
+      text-align: center;
+      color: #ffcc00;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #typewriter {
+      text-align: center;
+      font-size: 18px;
+      color: #ffcc00;
+      margin: 20px auto;
+      padding: 10px;
+      max-width: 500px;
+    }
+
+    form {
+      background: #2b2b2b;
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      width: 95%;
+      max-width: 400px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+    }
+
+    input, select, textarea {
+      background: #3c3c3c;
+      color: #fff;
+    }
+
+    button {
+      background: #ff0057;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background: #e6004c;
+      box-shadow: 0 0 15px #ffcc00;
+    }
+
+    .support-box {
+      background: #292929;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+    }
+
+    .support-box a {
+      color: #00ffcc;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #2b2b2b;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🎮 ZzZstile Sensitivity Shop</header>
+
+  <div id="typewriter"></div>
+
+  <form id="sensiForm" action="https://formspree.io/f/xovnoaya" method="POST">
+    <h2 style="text-align:center; color:#ffcc00;">فرم سفارش سنسی</h2>
+
+    <input type="text" name="username" placeholder="نام کاربری Free Fire" required>
+    <input type="text" name="playerId" placeholder="Player ID" required>
+    <input type="tel" name="phone" placeholder="شماره موبایل (جهت پیام)" required>
+
+    <select name="device" required>
+      <option value="">نوع دستگاه</option>
+      <option value="android-flagship">📱 اندروید پرچمدار (Samsung S, Xiaomi Pro)</option>
+      <option value="android-mid">📱 اندروید میان‌رده (Samsung A, Redmi)</option>
+      <option value="android-budget">📱 اندروید اقتصادی (Honor, Nokia, Tecno)</option>
+      <option value="iphone">🍎 آیفون (iPhone 8 تا 15)</option>
+      <option value="tablet">📱 تبلت (Samsung Tab, iPad)</option>
+    </select>
+
+    <select name="sensiLevel" required>
+      <option value="">نوع سنسی + قیمت</option>
+      <option value="normal">💠 سنسی معمولی — ۳,۰۰۰ تومان</option>
+      <option value="gold">🔶 سنسی طلایی (با دکمه تیر) — ۶,۰۰۰ تومان</option>
+      <option value="diamond">💎 سنسی الماسی (با دکمه تیر + DPI) — ۹,۰۰۰ تومان</option>
+    </select>
+
+    <textarea name="notes" placeholder="درخواست خاص یا توضیحات اضافی"></textarea>
+
+    <button type="submit">ارسال سفارش</button>
+
+    <div class="support-box">
+      💬 نیاز به راهنمایی؟  
+      <a href="https://rubika.ir/ZzZ0stile" target="_blank">پشتیبانی روبیکا (@ZzZ0stile)</a>
+    </div>
+  </form>
+
+  <footer>
+    📢 Join Our Channels:
+    <a href="https://www.aparat.com/ZzZstile" target="_blank">Aparat</a>
+    <a href="https://t.me/ZzZstile" target="_blank">Telegram</a>
+    <a href="https://instagram.com/ZzZstile" target="_blank">Instagram</a>
+    <a href="https://youtube.com/@ZzZstile" target="_blank">YouTube</a>
+  </footer>
+
+  <script>
+    // افکت تایپ‌نویس رباتی
+    const text = "🤖 ربات ZzZstile در حال جستجو بین ۵۰۰۰ سایت برای یافتن بهترین سنسی مخصوص شماست...";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    window.onload = typeWriter;
+
+    // افکت ظاهر شدن فرم هنگام اسکرول
+    window.addEventListener("scroll", () => {
+      document.querySelector("form").style.opacity = "1";
+      document.querySelector("form").style.transform = "translateY(0)";
+    });
+
+    // ذخیره شماره موبایل در مرورگر
+    const phoneInput = document.querySelector('input[name="phone"]');
+    phoneInput.value = localStorage.getItem("userPhone") || "";
+    phoneInput.addEventListener("input", () => {
+      localStorage.setItem("userPhone", phoneInput.value);
+    });
+
+    // ارسال فرم و انتقال به پرداخت
+    const form = document.getElementById('sensiForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          document.body.innerHTML = "<h2 style='color:#ffcc00; text-align:center;'>🤖 ربات در حال پردازش سفارش شماست...</h2>";
+          setTimeout(() => {
+            window.location.href = "https://daramet.com/ZzZstile";
+          }, 3000);
+        } else {
+          alert("خطا در ارسال فرم. لطفاً دوباره تلاش کنید.");
+        }
+      }).catch(error => {
+        alert("مشکلی پیش آمد. لطفاً اتصال اینترنت را بررسی کنید.");
+      });
+    });
+  </script>
+
+</body>
+</html>
